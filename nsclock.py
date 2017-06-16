@@ -1,7 +1,7 @@
  # -*- coding: utf-8 -*-
 """
 NS clock
-Copied partly on ns-notifications because I've never written Python before and have no idea what I'm doing
+Copied partly from ns-notifications because I've never written Python before and have no idea what I'm doing
 """
 import ns_api
 import click
