@@ -64,7 +64,7 @@ def get_stations(mc, nsapi):
             stations = nsapi.get_stations()
         except requests.exceptions.ConnectionError:
             print('Something went wrong connecting to the API')
-
+            
         stations_json = ns_api.list_to_json(stations)
         # Cache the stations
         mc.set('stations', stations_json)
