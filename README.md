@@ -2,5 +2,5 @@
 NS Nederlandse Spoorwegen clock
 
 
-mkvirtualenv nsclock
-pip install -r requirements.txt
+* mkvirtualenv nsclock
+* pip install -r requirements.txt
