@@ -1,0 +1,51 @@
+# Example configuration. Copy to settings.py and modify to your needs
+
+# NS API configuration
+username = 'jeremy@pdp8.nl'
+apikey = 'abyC7M5QqRUXrkbhaslNNKD-mttMDd37ojwgd5rkGJnMFAsuj71lvQ'
+# https://www.ns.nl/ews-aanvraagformulier/
+
+# If you'd like ns-notifications to automatically do a `git pull` when a new version is detected, set to True
+auto_update = False
+
+# Notifications types:
+# pb: PushBullet
+# pt: Pebble Time timeline (not yet implemented)
+notification_type = 'pb' # Use PushBullet
+
+# Pushbullet API key. See their website
+pushbullet_key = "o.S3RNEr32Thn49aTq5tBPIAZjpoFcnFjR"
+# Device to push to. Run ns_notifications with an invalid device_id for the list of which to choose
+pushbullet_device_id = "ujxKMSc1u2KsjxVJW77rpc"
+
+# Set to True when you want the disruptions (storingen) to go to a channel
+pushbullet_use_channel = False
+pushbullet_channel_tag = 'yourPushBulletChannelTag'
+
+# You might want to set this to True if you're already subscribed to someone else's (official) PushBullet Channel or just
+# are not interested in the disruptions
+# See for example https://www.pushbullet.com/channel?tag=treinverstoringen
+skip_disruptions = False
+
+# If you are only interested in disruptions, you might want to disable the trips (routes)
+skip_trips = False
+
+# If you are not interested in delays upon arrival (so only the departure of the whole trip), set to False
+arrival_delays = True
+
+# Uncomment the next two lines if you only want ERROR-level logging (or change to logging.WARNING for example)
+#import logging
+#debug_level = logging.ERROR
+
+# 'minimum': amount of time a delay needs to be at minimum for which a notification is fired
+# 'strict': if True and no connection is found for that exact time stamp, 'train cancelled' is fired
+routes = [
+        {'departure': 'Heemskerk', 'destination': 'Hoofddorp', 'time': '7:44', 'keyword': 'Beverwijk', 'minimum': 5 },
+         {'departure': 'Amsterdam Sloterdijk', 'destination': 'Hoofddorp', 'time': '8:19', 'keyword': None },
+         {'departure': 'Schiphol', 'destination': 'Hoofddorp', 'time': '9:15' },
+         {'departure': 'Hoofddorp', 'destination': 'Heemskerk', 'time': '17:05', 'keyword': 'Hoorn', 'minimum': 3 },
+         {'departure': 'Amsterdam Sloterdijk', 'destination': 'Heemskerk', 'time': '17:39', 'keyword': 'Haarlem' },
+         #{'departure': 'Amsterdam Sloterdijk', 'destination': 'Nijmegen', 'time': '21:40', 'keyword': None }, # test
+         #{'departure': 'Amsterdam Sloterdijk', 'destination': 'Schiphol', 'time': '22:19' }, # test
+         #{'departure': 'Amsterdam Sloterdijk', 'destination': 'Amersfoort', 'time': '22:09' }, # test
+         ]
