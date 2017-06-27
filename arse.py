@@ -3,8 +3,8 @@
 import sys
 #import urllib.request
 import requests
-#import xmltodict
-import untangle
+import xmltodict
+#import untangle
 
 try:
     import settings
@@ -24,6 +24,11 @@ except ImportError:
 
 #f = open('workfile.xml', 'w')
 
+#https://stackoverflow.com/questions/40154727/how-to-use-xmltodict-to-get-items-out-of-an-xml-file
+#https://pythonadventures.wordpress.com/tag/xmltodict/
+#http://www.ns.nl/en/travel-information/ns-api/documentation-up-to-date-departure-times.html
+#http://webservices.ns.nl/ns-api-avt?station=sgn
+#http://webservices.ns.nl/ns-api-avt?station=asd
 response = requests.get('http://webservices.ns.nl/ns-api-stations-v2',
         auth=requests.auth.HTTPBasicAuth(
                 settings.username,
@@ -32,10 +37,19 @@ response = requests.get('http://webservices.ns.nl/ns-api-stations-v2',
 with open('stations.xml', 'wb') as handle:
     for block in response.iter_content(1024):
         handle.write(block)
+        
+with open('stations.xml', 'rb') as fd:
+    doc = xmltodict.parse(fd.read())
+    
+codes = []
+for station in doc['Stations']['Station']:
+    codes.append(station['Code'])
+    
+print(codes)
 
-obj = untangle.parse('stations.xml')
+#obj = untangle.parse('stations.xml')
 
-print(obj.Stations.Station.Code)
+#print(obj.Stations.Station.Code)
 
 #data = xmltodict.parse(response)
     
