@@ -29,7 +29,8 @@ except ImportError:
 #http://www.ns.nl/en/travel-information/ns-api/documentation-up-to-date-departure-times.html
 #http://webservices.ns.nl/ns-api-avt?station=sgn
 #http://webservices.ns.nl/ns-api-avt?station=asd
-response = requests.get('http://webservices.ns.nl/ns-api-stations-v2',
+#http://webservices.ns.nl/ns-api-stations-v2
+response = requests.get('http://webservices.ns.nl/ns-api-avt?station=sgn',
         auth=requests.auth.HTTPBasicAuth(
                 settings.username,
                 settings.apikey), stream=True)
@@ -41,11 +42,22 @@ with open('stations.xml', 'wb') as handle:
 with open('stations.xml', 'rb') as fd:
     doc = xmltodict.parse(fd.read())
     
-codes = []
-for station in doc['Stations']['Station']:
-    codes.append(station['Code'])
+#codes = []
+#for station in doc['Stations']['Station']:
+#    codes.append(station['Code'])
     
-print(codes)
+trains = []
+
+for time in doc['ActueleVertrekTijden']['VertrekkendeTrein']:
+    trains.append(time['EindBestemming'])
+ 
+for time in doc['ActueleVertrekTijden']['VertrekkendeTrein']:   
+     trains.append(time['VertrekTijd'])
+    
+#for time in doc['ActueleVertrekTijden']['VertrekkendeTrein']:
+#    trains.append(time['VertrekSpoor'])
+    
+print(trains)
 
 #obj = untangle.parse('stations.xml')
 
