@@ -8,10 +8,14 @@ from collections import OrderedDict
 with open('trains.xml') as fd:
     doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
-iterCount = 1
+iterCount = 0
 numDisplayed = 0
 
-doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['RouteTekst']
+##this doesn't work
+#print(doc['ActueleVertrekTijden']['VertrekkendeTrein'][int(iterCount)]['RouteTekst'])
+
+##this does.
+doc['ActueleVertrekTijden']['VertrekkendeTrein'][0]['RouteTekst']
 
 #root_elements = doc['VertrekkendeTrein'] if type(doc) == OrderedDict else [doc["VertrekkendeTrein"]]
 #for element in root_elements:
