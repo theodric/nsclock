@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import sys
 import requests
 import xmltodict
 from collections import OrderedDict
@@ -27,10 +26,13 @@ with open('trains.xml') as fd:
 iterCount = 0
 numDisplayed = 0
 
-for iterCount in range(15):
+for iterCount in range(30):
     dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
     plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
+    
+    
+    
     if (dest == u"Den Helder" and numDisplayed <= 1) or (dest == u"Schagen" and numDisplayed <= 1):
         numDisplayed += 1
-        print(dest, " || ", time, " || ", "Platform ", plat)
+        print(dest, " || ", time[11:16], " || ", "Platform ", plat)

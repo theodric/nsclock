@@ -8,6 +8,10 @@
 		<RitNummer>1060</RitNummer>
 		<VertrekTijd>2017-06-29T18:22:00+0200</VertrekTijd>
 		
+			<VertrekVertraging>PT5M</VertrekVertraging>
+		
+		
+			<VertrekVertragingTekst>+5 min</VertrekVertragingTekst>
 		
 		<EindBestemming>Rotterdam Centraal</EindBestemming>
 		<TreinSoort>Intercity direct</TreinSoort>
@@ -18,60 +22,6 @@
 			<Vervoerder>NS</Vervoerder>
 		
 		<VertrekSpoor wijziging="true">14a</VertrekSpoor>
-		
-		
-	</VertrekkendeTrein>
-
-	<VertrekkendeTrein>
-		<RitNummer>14667</RitNummer>
-		<VertrekTijd>2017-06-29T18:23:00+0200</VertrekTijd>
-		
-		
-		<EindBestemming>Zwolle</EindBestemming>
-		<TreinSoort>Sprinter</TreinSoort>
-		
-			<RouteTekst>Weesp, Almere C., Lelystad C.</RouteTekst>
-		
-		
-			<Vervoerder>NS</Vervoerder>
-		
-		<VertrekSpoor wijziging="false">10b</VertrekSpoor>
-		
-		
-	</VertrekkendeTrein>
-
-	<VertrekkendeTrein>
-		<RitNummer>860</RitNummer>
-		<VertrekTijd>2017-06-29T18:24:00+0200</VertrekTijd>
-		
-		
-		<EindBestemming>Schagen</EindBestemming>
-		<TreinSoort>Intercity</TreinSoort>
-		
-			<RouteTekst>A'dam Sloterdijk, Zaandam, Castricum</RouteTekst>
-		
-		
-			<Vervoerder>NS</Vervoerder>
-		
-		<VertrekSpoor wijziging="false">8</VertrekSpoor>
-		
-		
-	</VertrekkendeTrein>
-
-	<VertrekkendeTrein>
-		<RitNummer>3067</RitNummer>
-		<VertrekTijd>2017-06-29T18:25:00+0200</VertrekTijd>
-		
-		
-		<EindBestemming>Nijmegen</EindBestemming>
-		<TreinSoort>Intercity</TreinSoort>
-		
-			<RouteTekst>Amstel, Utrecht C, De Klomp</RouteTekst>
-		
-		
-			<Vervoerder>NS</Vervoerder>
-		
-		<VertrekSpoor wijziging="false">4</VertrekSpoor>
 		
 		
 	</VertrekkendeTrein>
@@ -260,6 +210,10 @@
 		<RitNummer>869</RitNummer>
 		<VertrekTijd>2017-06-29T18:40:00+0200</VertrekTijd>
 		
+			<VertrekVertraging>PT1M</VertrekVertraging>
+		
+		
+			<VertrekVertragingTekst>+1 min</VertrekVertragingTekst>
 		
 		<EindBestemming>Maastricht</EindBestemming>
 		<TreinSoort>Intercity</TreinSoort>
@@ -404,6 +358,10 @@
 		<RitNummer>4071</RitNummer>
 		<VertrekTijd>2017-06-29T18:49:00+0200</VertrekTijd>
 		
+			<VertrekVertraging>PT1M</VertrekVertraging>
+		
+		
+			<VertrekVertragingTekst>+1 min</VertrekVertragingTekst>
 		
 		<EindBestemming>Rotterdam Centraal</EindBestemming>
 		<TreinSoort>Sprinter</TreinSoort>
@@ -802,6 +760,96 @@
 			<Vervoerder>NS</Vervoerder>
 		
 		<VertrekSpoor wijziging="true">5b</VertrekSpoor>
+		
+		
+	</VertrekkendeTrein>
+
+	<VertrekkendeTrein>
+		<RitNummer>1064</RitNummer>
+		<VertrekTijd>2017-06-29T19:22:00+0200</VertrekTijd>
+		
+		
+		<EindBestemming>Rotterdam Centraal</EindBestemming>
+		<TreinSoort>Intercity direct</TreinSoort>
+		
+			<RouteTekst>Schiphol Airport</RouteTekst>
+		
+		
+			<Vervoerder>NS</Vervoerder>
+		
+		<VertrekSpoor wijziging="false">14b</VertrekSpoor>
+		
+		
+	</VertrekkendeTrein>
+
+	<VertrekkendeTrein>
+		<RitNummer>14671</RitNummer>
+		<VertrekTijd>2017-06-29T19:23:00+0200</VertrekTijd>
+		
+		
+		<EindBestemming>Zwolle</EindBestemming>
+		<TreinSoort>Sprinter</TreinSoort>
+		
+			<RouteTekst>Weesp, Almere C., Lelystad C.</RouteTekst>
+		
+		
+			<Vervoerder>NS</Vervoerder>
+		
+		<VertrekSpoor wijziging="false">10b</VertrekSpoor>
+		
+		
+	</VertrekkendeTrein>
+
+	<VertrekkendeTrein>
+		<RitNummer>864</RitNummer>
+		<VertrekTijd>2017-06-29T19:24:00+0200</VertrekTijd>
+		
+		
+		<EindBestemming>Alkmaar</EindBestemming>
+		<TreinSoort>Intercity</TreinSoort>
+		
+			<RouteTekst>A'dam Sloterdijk, Zaandam, Castricum</RouteTekst>
+		
+		
+			<Vervoerder>NS</Vervoerder>
+		
+		<VertrekSpoor wijziging="false">8a</VertrekSpoor>
+		
+		
+	</VertrekkendeTrein>
+
+	<VertrekkendeTrein>
+		<RitNummer>3071</RitNummer>
+		<VertrekTijd>2017-06-29T19:25:00+0200</VertrekTijd>
+		
+		
+		<EindBestemming>Nijmegen</EindBestemming>
+		<TreinSoort>Intercity</TreinSoort>
+		
+			<RouteTekst>Amstel, Utrecht C, De Klomp</RouteTekst>
+		
+		
+			<Vervoerder>NS</Vervoerder>
+		
+		<VertrekSpoor wijziging="false">4</VertrekSpoor>
+		
+		
+	</VertrekkendeTrein>
+
+	<VertrekkendeTrein>
+		<RitNummer>5479</RitNummer>
+		<VertrekTijd>2017-06-29T19:26:00+0200</VertrekTijd>
+		
+		
+		<EindBestemming>Zandvoort aan Zee</EindBestemming>
+		<TreinSoort>Sprinter</TreinSoort>
+		
+			<RouteTekst>A'dam Sloterdijk, Haarlem</RouteTekst>
+		
+		
+			<Vervoerder>NS</Vervoerder>
+		
+		<VertrekSpoor wijziging="false">1</VertrekSpoor>
 		
 		
 	</VertrekkendeTrein>
