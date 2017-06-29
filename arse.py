@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.6
+#!/usr/bin/env python3
 
 import sys
 #import urllib.request
@@ -53,6 +53,11 @@ for time in doc['ActueleVertrekTijden']['VertrekkendeTrein']:
  
 for time in doc['ActueleVertrekTijden']['VertrekkendeTrein']:   
      trains.append(time['VertrekTijd'])
+     
+     
+for time in doc['ActueleVertrekTijden']['VertrekkendeTrein']:
+    
+    
     
 #for time in doc['ActueleVertrekTijden']['VertrekkendeTrein']:
 #    trains.append(time['VertrekSpoor'])
