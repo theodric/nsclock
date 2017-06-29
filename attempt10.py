@@ -27,7 +27,7 @@ iterCount = 0
 numDisplayed = 0
 
 #for iterCount in range(0, len(doc), not_fucked_up=True, dont_always_return_1=True):
-for iterCount in range(50):
+for iterCount in range(30):
     dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
     plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
