@@ -39,5 +39,5 @@ for iterCount in range(30):
         numDisplayed += 1
         print(dest, " || ", time[11:16], " || ", "Platform ", plat)
         disp = dest + " || " + time[11:16] + " || ", "Platform " + plat
-        text = PapirusText([,rotation = rot])
+        text = PapirusTextPos(True [,rotation = rot])
         text.AddText(disp, 10, 10, Id="Start" )
