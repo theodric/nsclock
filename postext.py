@@ -39,7 +39,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--posX', '-x', type=int, default=0, help="X position of the start of the text")
     p.add_argument('--posY', '-y', type=int, default=0, help="Y position of the start of the text")
-    p.add_argument('--fsize', '-s',type=int , default=11, help="Font size to use for the text")
+    p.add_argument('--fsize', '-s',type=int , default=12, help="Font size to use for the text")
     p.add_argument('--rotation', '-r',type=int , default=0, help="Rotation one of 0, 90, 180, 270")
     p.add_argument('--invert', '-i', type=bool, default=False, help="Invert the display of the text")
     args = p.parse_args()
@@ -56,16 +56,20 @@ def main():
                 dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
-                spc = " "
+                spc = "    "
                 if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
+                    if dest == "Den Helder":
+                        dest = "HDR"
+                    elif dest == "Schagen":
+                        dest = "SGN"
                     if numDisplayed == 0:
-                        Xpos = 0
-                        Ypos = 0
-                        disp = dest + spc + time[11:16] + spc + "Platform " + plat
+#                        Xpos = 0
+#                        Ypos = 0
+                        disp = dest + spc + time[11:16] + spc + "Spoor " + plat
                     elif numDisplayed == 1:
-                        Xpos = 25
-                        Ypos = 25
-                        disp2 = dest + spc + time[11:16] + spc + "Platform " + plat
+#                        Xpos = 25
+#                        Ypos = 25
+                        disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
                     numDisplayed += 1
                     dest = str(dest)
 #                    text = PapirusTextPos(False, rotation=args.rotation)
@@ -74,7 +78,7 @@ def main():
 #                    text.AddText(disp, args.posX, args.posY, args.fsize, invert=args.invert)
                     text = PapirusTextPos(False, rotation=args.rotation)
                     text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-                    text.AddText(disp, 0, 16, args.fsize, Id="opt1")
+                    text.AddText(disp, 0, 16, 18, Id="opt1")
                     try:
                         disp2
                     except NameError:
@@ -82,7 +86,7 @@ def main():
                     else:
                         disp2_exists = True
                     if disp2_exists == True:
-                        text.AddText(disp2, 0, 29, args.fsize, Id="opt2")
+                        text.AddText(disp2, 0, 29, 18, Id="opt2")
 
          text.WriteAll()
 
