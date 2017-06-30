@@ -8,6 +8,8 @@ from papirus import PapirusText
 from papirus import PapirusTextPos
 from papirus import Papirus
 
+rot = 0
+
 # The epaper screen object.
 # Optional rotation argument: rot = 0, 90, 180 or 270
 screen = Papirus([rotation = rot])
