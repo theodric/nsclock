@@ -62,13 +62,13 @@ def main():
          iterCount = 0
          numDisplayed = 0
 
-    if args.content:
-        text = PapirusTextPos(rotation=args.rotation)
+         if args.content:
+            text = PapirusTextPos(rotation=args.rotation)
 
-        for iterCount in range(30):
-            dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
-            time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
-            plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
+            for iterCount in range(30):
+                dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
+                time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
+                plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
             
                 if (dest == u"Den Helder" and numDisplayed <= 1) or (dest == u"Schagen" and numDisplayed <= 1):
                     numDisplayed += 1
