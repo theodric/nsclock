@@ -4,6 +4,7 @@ import sys
 import requests
 import xmltodict
 from collections import OrderedDict
+from papirus import PapirusText
 from papirus import PapirusTextPos
 
 
@@ -38,5 +39,5 @@ for iterCount in range(30):
         numDisplayed += 1
         print(dest, " || ", time[11:16], " || ", "Platform ", plat)
         disp = dest + " || " + time[11:16] + " || ", "Platform " + plat
-        text = PapirusTextPos([rotation = rot])
+        text = PapirusText([rotation = rot])
         text.AddText(disp, 10, 10, Id="Start" )
