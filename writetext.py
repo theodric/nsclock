@@ -63,21 +63,23 @@ def main():
          numDisplayed = 0
 
          if args.content:
-            text = PapirusTextPos(rotation=args.rotation)
-
             for iterCount in range(30):
                 dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
             
-                if (dest == u"Den Helder" and numDisplayed <= 1) or (dest == u"Schagen" and numDisplayed <= 1):
-                    numDisplayed += 1
-#                   print dest, " || ", time[11:16], " || ", "Platform ", plat
-                    disp = dest + " || " + time[11:16] + " || ", "Platform " + plat
-                    print("Writing to Papirus.......")
-                    text = PapirusText(rotation=args.rotation)
-                    text.AddText(disp, args.posX, args.posY, args.fsize, invert=args.invert)
-                    print("Finished!")
+#                if (dest == u"Den Helder" and numDisplayed <= 1) or (dest == u"Schagen" and numDisplayed <= 1):
+#                    numDisplayed += 1
+##                    print dest, " || ", time[11:16], " || ", "Platform ", plat
+#                    disp = dest + " || " + time[11:16] + " || ", "Platform " + plat
+#                    print("Writing to Papirus.......")
+#                    text = PapirusText(rotation=args.rotation)
+#                    text.AddText(args.content, args.posX, args.posY, args.fsize, invert=args.invert)
+#                    print("Finished!")
+                text = PapirusTextPos(rotation=args.rotation)
+                print("Writing to Papirus.......")
+                text.AddText(args.content, args.posX, args.posY, args.fsize, invert=args.invert)
+                print("Finished!")
 
 if __name__ == '__main__':
     main()
