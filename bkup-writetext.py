@@ -1,18 +1,15 @@
 #!/usr/bin/env python
-##merged with papirus-write from https://github.com/PiSupply/PaPiRus to implement arg parsing and epaper output
-###will clean up before GM
 
-##needed for papirus
 import os
 import sys
-#import time
+import time
 import requests
 import xmltodict
 import argparse
 from collections import OrderedDict
-from papirus import Papirus
-#from papirus import PapirusText
+from papirus import PapirusText
 from papirus import PapirusTextPos
+from papirus import Papirus
 
 try:
     import settings
@@ -40,14 +37,13 @@ with open('trains.xml', 'wb') as handle:
 
 def main():
     p = argparse.ArgumentParser()
-#    p.add_argument('--posX', '-x', type=int, default=0, help="X position of the start of the text")
-#    p.add_argument('--posY', '-y', type=int, default=0, help="Y position of the start of the text")
-    p.add_argument('--fsize', '-s',type=int , default=11, help="Font size to use for the text")
+    p.add_argument('--posX', '-x', type=int, default=0, help="X position of the start of the text")
+    p.add_argument('--posY', '-y', type=int, default=0, help="Y position of the start of the text")
+    p.add_argument('--fsize', '-s',type=int , default=20, help="Font size to use for the text")
     p.add_argument('--rotation', '-r',type=int , default=0, help="Rotation one of 0, 90, 180, 270")
     p.add_argument('--invert', '-i', type=bool, default=False, help="Invert the display of the text")
-
     args = p.parse_args()
-    args.content = "just fuck off"    
+    args.content = "at some point I will figure out why this is a required variable but until then I'll just nail it up like this"
 
     with open('trains.xml') as fd:
          doc = xmltodict.parse(fd.read(), xml_attribs=True)
@@ -60,11 +56,11 @@ def main():
                 dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
-                spaces = " || "
+            
                 if (dest == u"Den Helder" and numDisplayed <= 1) or (dest == u"Schagen" and numDisplayed <= 1):
                     numDisplayed += 1
-##                  print dest, " || ", time[11:16], " || ", "Platform ", plat
                     disp = dest + " || " + time[11:16] + " || " + "Platform " + plat
+                    dest = str(dest)
                     text = PapirusTextPos(rotation=args.rotation)
                     text.AddText(disp, args.posX, args.posY, args.fsize, invert=args.invert)
 
