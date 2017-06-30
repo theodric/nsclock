@@ -52,7 +52,7 @@ def main():
          numDisplayed = 0
 
          if args.content:
-            for iterCount in range(50):
+            for iterCount in range(30):
                 dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
@@ -73,7 +73,7 @@ def main():
 
                     text = PapirusTextPos(False, rotation=args.rotation)
                     text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-                    text.AddText(disp, 0, 20, 18, Id="opt1")
+                    text.AddText(disp, 0, 25, 18, Id="opt1")
                     try:
                         disp2
                     except NameError:
@@ -81,7 +81,7 @@ def main():
                     else:
                         disp2_exists = True
                     if disp2_exists == True:
-                        text.AddText(disp2, 0, 40, 18, Id="opt2")
+                        text.AddText(disp2, 0, 50, 18, Id="opt2")
 
                     try:
                         disp3
@@ -90,7 +90,7 @@ def main():
                     else:
                         disp3_exists = True
                     if disp3_exists == True:
-                        text.AddText(disp3, 0, 60, 18, Id="opt3")
+                        text.AddText(disp3, 0, 75, 18, Id="opt3")
 
          text.WriteAll()
 
