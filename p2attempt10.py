@@ -4,29 +4,6 @@ import sys
 import requests
 import xmltodict
 from collections import OrderedDict
-from papirus import PapirusText
-from papirus import PapirusTextPos
-from papirus import Papirus
-
-# The epaper screen object.
-# Optional rotation argument: rot = 0, 90, 180 or 270
-screen = Papirus([rotation = rot])
-
-# Write a bitmap to the epaper screen
-screen.display('./path/to/bmp/image')
-
-# Perform a full update to the screen (slower)
-screen.update()
-
-# Update only the changed pixels (faster)
-screen.partial_update()
-
-# Disable automatic use of LM75B temperature sensor
-screen.use_lm75b = False
-
-# Change screen size
-# SCREEN SIZES 1_44INCH | 1_9INCH | 2_0INCH | 2_6INCH | 2_7INCH
-screen.set_size(papirus.2_0INCH)
 
 try:
     import settings
@@ -57,7 +34,4 @@ for iterCount in range(30):
 
     if (dest == u"Den Helder" and numDisplayed <= 1) or (dest == u"Schagen" and numDisplayed <= 1):
         numDisplayed += 1
-#        print dest, " || ", time[11:16], " || ", "Platform ", plat
-        disp = dest + " || " + time[11:16] + " || ", "Platform " + plat
-        text = PapirusText()
-        text.AddText(disp, 10, 10, Id="Start" )
+        print dest, " || ", time[11:16], " || ", "Platform ", plat
