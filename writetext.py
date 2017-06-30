@@ -78,7 +78,7 @@ def main():
 #                print("Finished!")
                     text = PapirusTextPos(rotation=args.rotation)
                     print("Writing to Papirus.......")
-                    text.AddText(args.content, dest, args.posX, args.posY, args.fsize, invert=args.invert)
+                    text.AddText(args.content, str(dest), args.posX, args.posY, args.fsize, invert=args.invert)
                     print("Finished!")
 
 if __name__ == '__main__':
