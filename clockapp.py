@@ -52,30 +52,25 @@ def main():
          numDisplayed = 0
 
          if args.content:
-            for iterCount in range(30):
+            for iterCount in range(50):
                 dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
-                if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
+                if (dest == "Den Helder" and numDisplayed <= 2) or (dest == "Schagen" and numDisplayed <= 2):
                     if dest == "Den Helder":
                         dest = "HDR"
                     elif dest == "Schagen":
                         dest = "SGN"
                     if numDisplayed == 0:
-#                        Xpos = 0
-#                        Ypos = 0
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
                     elif numDisplayed == 1:
-#                        Xpos = 25
-#                        Ypos = 25
                         disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
+                    elif numDisplayed == 3:
+                        disp3 = dest + spc + time[11:16] + spc + "Spoor " + plat
+
                     numDisplayed += 1
-                    dest = str(dest)
-#                    text = PapirusTextPos(False, rotation=args.rotation)
-                    #text = PapirusTextPos(rotation=args.rotation)
-#                    text.partial_update()
-#                    text.AddText(disp, args.posX, args.posY, args.fsize, invert=args.invert)
+
                     text = PapirusTextPos(False, rotation=args.rotation)
                     text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
                     text.AddText(disp, 0, 20, 18, Id="opt1")
@@ -87,6 +82,15 @@ def main():
                         disp2_exists = True
                     if disp2_exists == True:
                         text.AddText(disp2, 0, 40, 18, Id="opt2")
+
+                    try:
+                        disp3
+                    except NameError:
+                        disp3_exists = False
+                    else:
+                        disp3_exists = True
+                    if disp3_exists == True:
+                        text.AddText(disp3, 0, 60, 18, Id="opt3")
 
          text.WriteAll()
 
