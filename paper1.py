@@ -4,7 +4,7 @@ import sys
 import requests
 import xmltodict
 from collections import OrderedDict
-import papirus
+from papirus import PapirusTextPos
 
 
 try:
