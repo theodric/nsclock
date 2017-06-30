@@ -77,6 +77,7 @@ def main():
 #                text.AddText(args.content, args.posX, args.posY, args.fsize, invert=args.invert)
 #                print("Finished!")
                     dest = str(dest)
+                    dest = print(dest)
                     text = PapirusTextPos(rotation=args.rotation)
                     print("Writing to Papirus.......")
                     text.AddText(args.content, args.posX, args.posY, args.fsize, invert=args.invert)
