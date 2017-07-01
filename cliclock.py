@@ -33,7 +33,7 @@ destStation2 = "Schagen"
 ## There are two destinations that get me to my target station, 
 ## so I'm checking for both, but you can just uncomment the
 ## next line if you only need to watch one destination.
-destStation2 = destStation1
+#destStation2 = destStation1
 
 ## CONFIGURABLE ITEM
 ## the station=<VALUE> at the end of the URL is your start station
@@ -57,12 +57,12 @@ iterCount = 0
 numDisplayed = 0
 
 ## CONFIGURABLE ITEM
-## Depending on the time of day and size of your station, there will be a
-## varying number of results returned in the 'trains.xml' sheet. If this
+## Depending on the time of day, and the size of your station, there will
+## be a varying number of results returned in the 'trains.xml' sheet. If
 ## range(VALUE) exceeds the number of results contained in the file, the
 ## script will die. I realize that this sucks, and I will work on fixing
 ## it. For now, set the range(VALUE) to something that works for you.
-#for iterCount in range(0, len(doc), not_fucked_up=True, dont_always_return_1=True):    
+#for iterCount in range(0, len(doc), not_fucked_up=True, dont_always_return_1=True):  
 for iterCount in range(30):
     dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
