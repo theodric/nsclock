@@ -1,0 +1,5 @@
+requests
+xmltodict
+argparse
+collections
+papirus
