@@ -13,7 +13,9 @@ Prints the same information as above to your terminal.
 
 ##### Usage:
 
-First, install required libraries.
+Step zero, [Register for an NS API key](http://www.ns.nl/ews-aanvraagformulier/).
+
+Then, install required libraries.
 
 ```bash
 pip install -r requirements.txt
