@@ -61,35 +61,35 @@ def main():
              spc = "    "
              print(dest + spc + time[11:16] + spc + plat)
              if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
-                 if dest == "Den Helder":
-                     dest = "HDR"
-                        print("!! HIT")
-                    elif dest == "Schagen":
-                        dest = "SGN"
-                        print("!! HIT")
-                    if numDisplayed == 0:
-                        disp = dest + spc + time[11:16] + spc + "Spoor " + plat
-                    elif numDisplayed == 1:
-                        disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
-                    numDisplayed += 1
-#                    dest = str(dest)
-                    text = PapirusTextPos(False, rotation=args.rotation)
-                    text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-                    text.AddText(disp, 0, 20, 18, Id="opt1")
-                    try:
-                        disp2
-                    except NameError:
-                        disp2_exists = False
-                    else:
-                        disp2_exists = True
-                    if disp2_exists == True:
-                        text.AddText(disp2, 0, 40, 18, Id="opt2")
-    if numDisplayed == 0:
-        print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
-	text = PapirusTextPos(False, rotation=args.rotation)
-        text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-        text.AddText("Apparently there are no trains.", 0, 35, 18, Id="errtxt")
-    text.WriteAll()
+                if dest == "Den Helder":
+                    dest = "HDR"
+                    print("!! HIT")
+                elif dest == "Schagen":
+                    dest = "SGN"
+                    print("!! HIT")
+                if numDisplayed == 0:
+                    disp = dest + spc + time[11:16] + spc + "Spoor " + plat
+                elif numDisplayed == 1:
+                    disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
+                numDisplayed += 1
+#               dest = str(dest)
+                text = PapirusTextPos(False, rotation=args.rotation)
+                text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
+                text.AddText(disp, 0, 20, 18, Id="opt1")
+                try:
+                    disp2
+                except NameError:
+                    disp2_exists = False
+                else:
+                    disp2_exists = True
+                if disp2_exists == True:
+                    text.AddText(disp2, 0, 40, 18, Id="opt2")
+if numDisplayed == 0:
+    print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
+text = PapirusTextPos(False, rotation=args.rotation)
+    text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
+    text.AddText("Apparently there are no trains.", 0, 35, 18, Id="errtxt")
+text.WriteAll()
 
 if __name__ == '__main__':
     main()
