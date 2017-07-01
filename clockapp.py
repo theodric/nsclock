@@ -58,12 +58,12 @@ def main():
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
                 print(dest + spc + time[11:16] + spc + plat)
-                if (dest == "Breda" and numDisplayed <= 2) or (dest == "Wormerveer" and numDisplayed <= 2):
+                if (dest == "Nijmegen" and numDisplayed <= 2) or (dest == "Wormerveer" and numDisplayed <= 2):
                     if dest == "Wormerveer":
                         dest = "WRM"
                         print("!! HIT")
-                    elif dest == "Breda":
-                        dest = "BRD"
+                    elif dest == "Nijmegen":
+                        dest = "NIM"
                         print("!! HIT")
                     if numDisplayed == 0:
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
