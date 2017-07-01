@@ -58,7 +58,7 @@ def main():
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
                 print(dest + spc + time[11:16] + spc + plat)
-                if (dest == "qeq" and numDisplayed <= 3) or (dest == "wew" and numDisplayed <= 3):
+                if (dest == "qeq" and numDisplayed <= 3) or (dest == "wew   " and numDisplayed <= 3):
                     if dest == "Wormerveer":
                         dest = "WRM"
                         print("!! HIT")
@@ -76,7 +76,7 @@ def main():
                     numDisplayed += 1
 #                    dest = str(dest)
                     text = PapirusTextPos(False, rotation=args.rotation)
-                    text.AddText("Vertrek van de treinen\n\n", 11, 0, 13, Id="Header")
+                    text.AddText("Vertrek van de treinen\n\n", 12, 0, 13, Id="Header")
                     text.AddText(disp, 0, 19, 18, Id="opt1")
                     try:
                         disp2
@@ -108,8 +108,8 @@ def main():
         print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
 	text = PapirusTextPos(False, rotation=args.rotation)
         text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-        text.AddText("Apparently there", 20, 35, 18, Id="errtxt1")
-        text.AddText("are no trains.", 20, 55, 18, Id="errtxt2")
+        text.AddText("Apparently there", 15, 35, 18, Id="errtxt1")
+        text.AddText("are no trains.", 25, 55, 18, Id="errtxt2")
     text.WriteAll()
 
 if __name__ == '__main__':
