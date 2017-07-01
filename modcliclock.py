@@ -20,7 +20,7 @@ with open('trains.xml', 'wb') as handle:
     for block in response.iter_content(1024):
         handle.write(block)
 
-with open('trains.xml') as fd:
+with open('trains-static.xml') as fd:
     doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
 iterCount = 0
@@ -32,6 +32,6 @@ for iterCount in range(30):
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
     plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
 
-    if (dest == u"Den Helder" and numDisplayed <= 1) or (dest == u"Schagen" and numDisplayed <= 1):
+    if (dest == u"Beverwijk" and numDisplayed <= 1) or (dest == u"Vlissingen" and numDisplayed <= 1):
         numDisplayed += 1
         print(dest, " || ", time[11:16], " || ", "Platform ", plat)

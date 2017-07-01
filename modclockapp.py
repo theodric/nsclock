@@ -26,14 +26,14 @@ if EPD_SIZE == 0.0:
     sys.exit()
 
 
-response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
-        auth=requests.auth.HTTPBasicAuth(
-                settings.username,
-                settings.apikey), stream=True)
+#response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
+#        auth=requests.auth.HTTPBasicAuth(
+#                settings.username,
+#                settings.apikey), stream=True)
 
-with open('/tmp/trains.xml', 'wb') as handle:
-    for block in response.iter_content(1024):
-        handle.write(block)
+#with open('trains.xml', 'wb') as handle:
+#    for block in response.iter_content(1024):
+#        handle.write(block)
 
 def main():
     p = argparse.ArgumentParser()
@@ -45,25 +45,29 @@ def main():
     args = p.parse_args()
     args.content = "at some point I will figure out why this is a required variable but until then I'll just nail it up like this"
 
-    with open('/tmp/trains.xml') as fd:
+    with open('trains-static.xml') as fd:
          doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
          iterCount = 0
          numDisplayed = 0
 
          if args.content:
-            for iterCount in range(10):
+            for iterCount in range(35):
                 text = PapirusTextPos(False, rotation=args.rotation)
                 text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
                 dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
-                if (dest == "Den Helder" and numDisplayed <= 2) or (dest == "Schagen" and numDisplayed <= 2):
-                    if dest == "Den Helder":
-                        dest = "HDR"
-                    elif dest == "Schagen":
-                        dest = "SGN"
+		print(dest)
+                if (dest == 'Maastricht' and numDisplayed <= 2) or (dest == 'Rhenen' and numDisplayed <= 2):
+                    if dest == "Maastricht":
+                        dest = "MAA"
+                        print("YUP, " + dest + "!")
+                    elif dest == "Rhenen":
+                        dest = "RHE"
+                        print(dest + ", YEEHA!")
+
                     if numDisplayed == 0:
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
                     elif numDisplayed == 1:
@@ -91,10 +95,8 @@ def main():
                         disp3_exists = True
                     if disp3_exists == True:
                         text.AddText(disp3, 0, 75, 18, Id="opt3")
-
-         if numDisplayed == 0:
-             text.AddText("Apparently there are no trains.", 0, 35, 18, Id="errtxt")
-         text.WriteAll()
+    print(text)
+    text.WriteAll()
 
 if __name__ == '__main__':
     main()
