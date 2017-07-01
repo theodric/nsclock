@@ -125,7 +125,12 @@ def main():
         text.AddText(train9, 15, 53, 13, Id="train9")
 #        text.AddText("Apparently there", 15, 35, 18, Id="errtxt1")
 #        text.AddText("are no trains.", 25, 55, 18, Id="errtxt2")
-        text.AddText("Apparently there are no trains", 8, 80, 10, Id="errtxt")        
+        text.AddText("Apparently there are no trains", 8, 80, 10, Id="errtxt")
+	print(train1)
+	print(train2)
+	print(train3)
+	print(train4)
+	print(train5)
     text.WriteAll()
 
 if __name__ == '__main__':
