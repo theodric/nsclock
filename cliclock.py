@@ -58,7 +58,7 @@ numDisplayed = 0
 
 ## CONFIGURABLE ITEM
 ## Depending on the time of day, and the size of your station, there will
-## be a varying number of results returned in the 'trains.xml' sheet. If
+## be a varying number of results returned in the 'trains.xml' file. If
 ## range(VALUE) exceeds the number of results contained in the file, the
 ## script will die. I realize that this sucks, and I will work on fixing
 ## it. For now, set the range(VALUE) to something that works for you.

@@ -141,6 +141,9 @@ def main():
                     ## save each extracted row to its own variable because
                     ## I can't quite grasp how to do this better.
                     if numDisplayed == 0:
+                                       ## chars [11:16] is where the time lives.
+                                       ## the raw var contains e.g.
+                                       ## 2017-07-01T21:07:00+0200
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
                     elif numDisplayed == 1:
                         disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
@@ -160,6 +163,9 @@ def main():
 
                     ## The next three stanzas are merely an attempt to gracefully 
                     ## handle fewer than the maximum allowed number of results.
+                    ## The results, if they exist, are presented roughly centered
+                    ## in a stack starting from the top, as you can see from the
+                    ## increasing Y values in text.AddText.
                     try:
                         disp2
                     except NameError:
@@ -187,10 +193,15 @@ def main():
                     if disp4_exists == True:
                         text.AddText(disp3, 0, 79, 18, Id="opt4")
                         
+    ## Exception handling. If we got all the way here and there was
+    ## nothing to display, print something on the screen and the CLI
+    ## to alert the user.
     if numDisplayed == 0:
         print("\nNo hits for configured stations. Assuming disruption. Exception handler goes here.")
 	text = PapirusTextPos(False, rotation=args.rotation)
         text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
+        ## this is the small Choo-Choo #404 from above, appearing
+        ## shortly on your PaPiRus :)
         text.AddText(train6, 87, 15, 13, Id="train6")
         text.AddText(train7, 28, 27, 13, Id="train7")
         text.AddText(train8, 20, 40, 13, Id="train8")
@@ -198,11 +209,19 @@ def main():
 #        text.AddText("Apparently there", 15, 35, 18, Id="errtxt1")
 #        text.AddText("are no trains.", 25, 55, 18, Id="errtxt2")
         text.AddText("Apparently there are no trains", 8, 80, 10, Id="errtxt")
+    ## And here's another Choo-Choo #404 to keep your terminal company
 	print(train1)
 	print(train2)
 	print(train3)
 	print(train4)
 	print(train5 + "\n")
+    
+    ## Finally, the grand finale! Up until now, every text.AddText()
+    ## operation was merely adding data to the buffer for the screen,
+    ## not actually displaying it. text.WriteAll() dumps everything
+    ## to the screen all at once, as befits an ePaper display. We
+    ## only have to call this once per run of the entire script,
+    # which is why it's at the end. d3rp.
     text.WriteAll()
 
 if __name__ == '__main__':
