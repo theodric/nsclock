@@ -130,7 +130,7 @@ def main():
 	print(train2)
 	print(train3)
 	print(train4)
-	print(train5)
+	print(train5 + "\n")
     text.WriteAll()
 
 if __name__ == '__main__':
