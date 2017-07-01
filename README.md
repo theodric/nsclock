@@ -45,4 +45,4 @@ This was my first attempt at writing something useful in Python. I owe thanks to
 
 [stackoverflow](https://stackoverflow.com/)
 
-[SoloLearn](https://www.sololearn.com/Courses/)
+[SoloLearn](https://www.sololearn.com/Course/Python/)
