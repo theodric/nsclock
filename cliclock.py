@@ -9,6 +9,7 @@ from collections import OrderedDict
 ## http://www.ns.nl/en/travel-information/ns-api
 
 ## The below imports settings.py, which contains your NS login and API key.
+## You can sign up for this key at http://www.ns.nl/ews-aanvraagformulier/
 ## settings.py must be created in the same directory as this script. Format:
 ############################################################################
 ## username = 'username@emailprovider.tld'
@@ -17,16 +18,18 @@ from collections import OrderedDict
 try:
     import settings
 except ImportError:
-    print('Copy settings_example.py to settings.py and set the configuration to your own preferences')
+    print('Copy settings_example.py to settings.py and set the configuration to your own credentials')
     sys.exit(1)
 
-## Look up what your stations long and short names are byy searching
-## the official station list: http://webservices.ns.nl/ns-api-stations-v2
 
 ## CONFIGURABLE ITEM
-## Hardcode your default destination stations here.
-station1 = "Amersfoort"
-station2 = "Rotterdam Centraal"
+## Hardcode your default DESTINATION stations here.
+## Look up what your destination stations' long and short names
+## are by searching the official station list:
+## http://webservices.ns.nl/ns-api-stations-v2
+#startStation = not configured here!
+destStation1 = "Amersfoort"
+destStation2 = "Rotterdam Centraal"
 
 ## There are two destinations that get me to my target station, 
 ## so I'm checking for both, but you can just uncomment the
@@ -71,6 +74,6 @@ for iterCount in range(30):
 ## Currently the script outputs the next four trains matching your
 ## destination. Change the max value on both below checks of
 ## numDisplayed to get more results.
-    if (dest == str(station1) and numDisplayed <= 3) or (dest == str(station2) and numDisplayed <= 3):
+    if (dest == destStation1 and numDisplayed <= 3) or (dest == destStation2 and numDisplayed <= 3):
         numDisplayed += 1
         print(dest + spc + time[11:16] + spc + "Platform " + plat)

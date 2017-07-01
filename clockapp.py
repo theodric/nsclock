@@ -18,16 +18,17 @@ from papirus import Papirus
 ## http://www.ns.nl/en/travel-information/ns-api
 
 ## The below imports settings.py, which contains your NS login and API key.
-## settings.py goes in the same directory as this script. File format:
-###########################################################################
+## You can sign up for this key at http://www.ns.nl/ews-aanvraagformulier/
+## settings.py must be created in the same directory as this script. Format:
+############################################################################
 ## username = 'username@emailprovider.tld'
 ## apikey = 'abyC7M5QqRUXrt1ttyf4rtD-mttw4nkn0zzl35rkGJnMj1zznIppl3'
-###########################################################################
+############################################################################
 
 try:
     import settings
 except ImportError:
-    print('Copy settings_example.py to settings.py and set the configuration to your own preferences')
+    print('Copy settings_example.py to settings.py and set the configuration to your own credentials')
     sys.exit(1)
 
 # Check EPD_SIZE is defined
