@@ -77,7 +77,7 @@ def main():
 #                    dest = str(dest)
                     text = PapirusTextPos(False, rotation=args.rotation)
                     text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-                    text.AddText(disp, 0, 20, 18, Id="opt1")
+                    text.AddText(disp, 0, 19, 18, Id="opt1")
                     try:
                         disp2
                     except NameError:
@@ -85,7 +85,7 @@ def main():
                     else:
                         disp2_exists = True
                     if disp2_exists == True:
-                        text.AddText(disp2, 0, 40, 18, Id="opt2")
+                        text.AddText(disp2, 0, 39, 18, Id="opt2")
                     try:
                         disp3
                     except NameError:
@@ -93,7 +93,7 @@ def main():
                     else:
                         disp3_exists = True
                     if disp3_exists == True:
-                        text.AddText(disp3, 0, 60, 18, Id="opt3")
+                        text.AddText(disp3, 0, 59, 18, Id="opt3")
                         
                     try:
                         disp4
@@ -102,7 +102,7 @@ def main():
                     else:
                         disp4_exists = True
                     if disp4_exists == True:
-                        text.AddText(disp3, 0, 80, 18, Id="opt4")
+                        text.AddText(disp3, 0, 79, 18, Id="opt4")
                         
     if numDisplayed == 0:
         print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
