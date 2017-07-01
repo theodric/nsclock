@@ -26,14 +26,14 @@ if EPD_SIZE == 0.0:
     sys.exit()
 
 
-#response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
-#        auth=requests.auth.HTTPBasicAuth(
-#                settings.username,
-#                settings.apikey), stream=True)
-#
-#with open('trains.xml', 'wb') as handle:
-#    for block in response.iter_content(1024):
-#        handle.write(block)
+response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
+        auth=requests.auth.HTTPBasicAuth(
+                settings.username,
+                settings.apikey), stream=True)
+
+with open('trains.xml', 'wb') as handle:
+    for block in response.iter_content(1024):
+        handle.write(block)
 
 def main():
     p = argparse.ArgumentParser()
@@ -45,7 +45,7 @@ def main():
     args = p.parse_args()
     args.content = "at some point I will figure out why this is a required variable but until then I'll just nail it up like this"
 
-    with open('trains.xml') as fd:
+    with open('trains-static.xml') as fd:
          doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
          iterCount = 0
@@ -88,8 +88,7 @@ def main():
                     if disp2_exists == True:
                         text.AddText(disp2, 0, 40, 18, Id="opt2")
 
-    text.WriteAll()
+         text.WriteAll()
 
 if __name__ == '__main__':
     main()
-

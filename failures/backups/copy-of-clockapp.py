@@ -26,14 +26,14 @@ if EPD_SIZE == 0.0:
     sys.exit()
 
 
-#response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
-#        auth=requests.auth.HTTPBasicAuth(
-#                settings.username,
-#                settings.apikey), stream=True)
-#
-#with open('trains.xml', 'wb') as handle:
-#    for block in response.iter_content(1024):
-#        handle.write(block)
+response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
+        auth=requests.auth.HTTPBasicAuth(
+                settings.username,
+                settings.apikey), stream=True)
+
+with open('/tmp/trains.xml', 'wb') as handle:
+    for block in response.iter_content(1024):
+        handle.write(block)
 
 def main():
     p = argparse.ArgumentParser()
@@ -45,7 +45,7 @@ def main():
     args = p.parse_args()
     args.content = "at some point I will figure out why this is a required variable but until then I'll just nail it up like this"
 
-    with open('trains.xml') as fd:
+    with open('trains-static.xml') as fd:
          doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
          iterCount = 0
@@ -57,28 +57,23 @@ def main():
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
-                if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
+                if (dest == "Den Helder" and numDisplayed <= 2) or (dest == "Schagen" and numDisplayed <= 2):
                     if dest == "Den Helder":
                         dest = "HDR"
                     elif dest == "Schagen":
                         dest = "SGN"
                     if numDisplayed == 0:
-#                        Xpos = 0
-#                        Ypos = 0
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
                     elif numDisplayed == 1:
-#                        Xpos = 25
-#                        Ypos = 25
                         disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
+                    elif numDisplayed == 3:
+                        disp3 = dest + spc + time[11:16] + spc + "Spoor " + plat
+
                     numDisplayed += 1
-                    dest = str(dest)
-#                    text = PapirusTextPos(False, rotation=args.rotation)
-                    #text = PapirusTextPos(rotation=args.rotation)
-#                    text.partial_update()
-#                    text.AddText(disp, args.posX, args.posY, args.fsize, invert=args.invert)
+
                     text = PapirusTextPos(False, rotation=args.rotation)
                     text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-                    text.AddText(disp, 0, 20, 18, Id="opt1")
+                    text.AddText(disp, 0, 25, 18, Id="opt1")
                     try:
                         disp2
                     except NameError:
@@ -86,10 +81,18 @@ def main():
                     else:
                         disp2_exists = True
                     if disp2_exists == True:
-                        text.AddText(disp2, 0, 40, 18, Id="opt2")
+                        text.AddText(disp2, 0, 50, 18, Id="opt2")
 
-    text.WriteAll()
+                    try:
+                        disp3
+                    except NameError:
+                        disp3_exists = False
+                    else:
+                        disp3_exists = True
+                    if disp3_exists == True:
+                        text.AddText(disp3, 0, 75, 18, Id="opt3")
+
+         text.WriteAll()
 
 if __name__ == '__main__':
     main()
-

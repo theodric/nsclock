@@ -57,7 +57,8 @@ def main():
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
-                if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
+                print(dest + spc + time[11:16] + spc + plat)
+                if (dest == "Enkhuizen" and numDisplayed <= 1) or (dest == "Breda" and numDisplayed <= 1):
                     if dest == "Den Helder":
                         dest = "HDR"
                     elif dest == "Schagen":
@@ -87,7 +88,10 @@ def main():
                         disp2_exists = True
                     if disp2_exists == True:
                         text.AddText(disp2, 0, 40, 18, Id="opt2")
-
+    if numDisplayed == 0:
+	text = PapirusTextPos(False, rotation=args.rotation)
+        text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
+        text.AddText("Apparently there are no trains.", 0, 35, 18, Id="errtxt")
     text.WriteAll()
 
 if __name__ == '__main__':

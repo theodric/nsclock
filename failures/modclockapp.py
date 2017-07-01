@@ -45,38 +45,45 @@ def main():
     args = p.parse_args()
     args.content = "at some point I will figure out why this is a required variable but until then I'll just nail it up like this"
 
-    with open('trains-static.xml') as fd:
+    with open('oldtrains.xml') as fd:
          doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
          iterCount = 0
          numDisplayed = 0
 
          if args.content:
-            for iterCount in range(35):
+            for iterCount in range(30):
                 text = PapirusTextPos(False, rotation=args.rotation)
                 text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
                 dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
-		print(dest)
-                if (dest == 'Maastricht' and numDisplayed <= 2) or (dest == 'Rhenen' and numDisplayed <= 2):
-                    if dest == "Maastricht":
-                        dest = "MAA"
+		print(dest + spc + time[11:16] + spc + plat)
+                if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
+                    if dest == "Den Helder":
+                        dest = "HLD"
                         print("YUP, " + dest + "!")
-                    elif dest == "Rhenen":
-                        dest = "RHE"
+                    elif dest == "Schagen":
+                        dest = "SGN"
                         print(dest + ", YEEHA!")
 
                     if numDisplayed == 0:
+			print("numDisplayed == 0")
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
                     elif numDisplayed == 1:
+			print("numDisplayed == 1")
                         disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
-                    elif numDisplayed == 3:
+                    elif numDisplayed == 2:
                         disp3 = dest + spc + time[11:16] + spc + "Spoor " + plat
 
+                    print("incrementing numDisplayed from ")
+                    print(numDisplayed)
+                    print(" to ")
                     numDisplayed += 1
+                    print(numDisplayed)
 
+                    print("adding 1st dest to screen buffer")
                     text.AddText(disp, 0, 25, 18, Id="opt1")
                     try:
                         disp2
@@ -85,6 +92,7 @@ def main():
                     else:
                         disp2_exists = True
                     if disp2_exists == True:
+			print("adding 2nd dest to screen buffer")
                         text.AddText(disp2, 0, 50, 18, Id="opt2")
 
                     try:
@@ -95,7 +103,9 @@ def main():
                         disp3_exists = True
                     if disp3_exists == True:
                         text.AddText(disp3, 0, 75, 18, Id="opt3")
-    print(text)
+    if numDisplayed == 0:
+        text.AddText("Apparently there are no trains.", 0, 35, 18, Id="errtxt")
+    print("writing buffer to screen")
     text.WriteAll()
 
 if __name__ == '__main__':
