@@ -116,7 +116,7 @@ def main():
         text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
 #        text.AddText("Apparently there", 15, 35, 18, Id="errtxt1")
 #        text.AddText("are no trains.", 25, 55, 18, Id="errtxt2")
-        text.AddText("   . . . . o o o o o", 0, 10, 13, Id="Header")
+        text.AddText("   . .DERP . . o o o o o", 0, 10, 13, Id="Header")
         text.AddText(train2, 0, 20, 13, Id="Header")
         text.AddText(train3, 0, 30, 13, Id="Header")
         text.AddText(train4, 0, 40, 13, Id="Header")
