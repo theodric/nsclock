@@ -70,7 +70,7 @@ def main():
     p.add_argument('--rotation', '-r',type=int , default=0, help="Rotation one of 0, 90, 180, 270")
     p.add_argument('--invert', '-i', type=bool, default=False, help="Invert the display of the text")
     args = p.parse_args()
-    args.content = "at some point I will figure out why this is a required variable but until then I'll just nail it up like this"
+    args.content = " "
 
     with open('/tmp/trains.xml') as fd:
          doc = xmltodict.parse(fd.read(), xml_attribs=True)

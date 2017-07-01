@@ -21,20 +21,19 @@ except ImportError:
     print('Copy settings_example.py to settings.py and set the configuration to your own credentials')
     sys.exit(1)
 
-
 ## CONFIGURABLE ITEM
 ## Hardcode your default DESTINATION stations here.
 ## Look up what your destination stations' long and short names
 ## are by searching the official station list:
 ## http://webservices.ns.nl/ns-api-stations-v2
 #startStation = not configured here!
-destStation1 = "Amersfoort"
-destStation2 = "Rotterdam Centraal"
+destStation1 = "Den Helder"
+destStation2 = "Schagen"
 
 ## There are two destinations that get me to my target station, 
 ## so I'm checking for both, but you can just uncomment the
 ## next line if you only need to watch one destination.
-#station2 = station1
+destStation2 = destStation1
 
 ## CONFIGURABLE ITEM
 ## the station=<VALUE> at the end of the URL is your start station
