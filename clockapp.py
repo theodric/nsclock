@@ -59,11 +59,11 @@ def main():
                 spc = "    "
                 print(dest + spc + time[11:16] + spc + plat)
                 if (dest == "Wormerveer" and numDisplayed <= 2) or (dest == "Wormerveer" and numDisplayed <= 2):
-                    if dest == "Den Helder":
-                        dest = "HDR"
+                    if dest == "Wormerveer":
+                        dest = "WRM"
                         print("!! HIT")
-                    elif dest == "Schagen":
-                        dest = "SGN"
+                    elif dest == "Breda":
+                        dest = "BRD"
                         print("!! HIT")
                     if numDisplayed == 0:
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
