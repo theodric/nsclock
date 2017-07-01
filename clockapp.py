@@ -31,7 +31,7 @@ response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
                 settings.username,
                 settings.apikey), stream=True)
 
-with open('trains.xml', 'wb') as handle:
+with open('/tmp/trains.xml', 'wb') as handle:
     for block in response.iter_content(1024):
         handle.write(block)
 
@@ -45,7 +45,7 @@ def main():
     args = p.parse_args()
     args.content = "at some point I will figure out why this is a required variable but until then I'll just nail it up like this"
 
-    with open('trains.xml') as fd:
+    with open('/tmp/trains.xml') as fd:
          doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
          iterCount = 0
@@ -61,22 +61,16 @@ def main():
                 if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
                     if dest == "Den Helder":
                         dest = "HDR"
+                        print("!! HIT")
                     elif dest == "Schagen":
                         dest = "SGN"
+                        print("!! HIT")
                     if numDisplayed == 0:
-#                        Xpos = 0
-#                        Ypos = 0
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
                     elif numDisplayed == 1:
-#                        Xpos = 25
-#                        Ypos = 25
                         disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
                     numDisplayed += 1
-                    dest = str(dest)
-#                    text = PapirusTextPos(False, rotation=args.rotation)
-                    #text = PapirusTextPos(rotation=args.rotation)
-#                    text.partial_update()
-#                    text.AddText(disp, args.posX, args.posY, args.fsize, invert=args.invert)
+#                    dest = str(dest)
                     text = PapirusTextPos(False, rotation=args.rotation)
                     text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
                     text.AddText(disp, 0, 20, 18, Id="opt1")
@@ -89,6 +83,7 @@ def main():
                     if disp2_exists == True:
                         text.AddText(disp2, 0, 40, 18, Id="opt2")
     if numDisplayed == 0:
+        print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
 	text = PapirusTextPos(False, rotation=args.rotation)
         text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
         text.AddText("Apparently there are no trains.", 0, 35, 18, Id="errtxt")
