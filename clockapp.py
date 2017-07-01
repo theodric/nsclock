@@ -119,10 +119,10 @@ def main():
         print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
 	text = PapirusTextPos(False, rotation=args.rotation)
         text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-        text.AddText(train6, 87, 10, 13, Id="train6")
-        text.AddText(train7, 28, 25, 13, Id="train7")
+        text.AddText(train6, 87, 15, 13, Id="train6")
+        text.AddText(train7, 28, 27, 13, Id="train7")
         text.AddText(train8, 20, 40, 13, Id="train8")
-        text.AddText(train9, 15, 55, 13, Id="train9")
+        text.AddText(train9, 15, 53, 13, Id="train9")
 #        text.AddText("Apparently there", 15, 35, 18, Id="errtxt1")
 #        text.AddText("are no trains.", 25, 55, 18, Id="errtxt2")
         text.AddText("Apparently there are no trains", 8, 80, 10, Id="errtxt")        
@@ -130,4 +130,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
