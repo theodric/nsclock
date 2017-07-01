@@ -47,10 +47,10 @@ def main():
     args.content = "at some point I will figure out why this is a required variable but until then I'll just nail it up like this"
 
     with open('/tmp/trains.xml') as fd:
-         doc = xmltodict.parse(fd.read(), xml_attribs=True)
+        doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
-         iterCount = 0
-         numDisplayed = 0
+        iterCount = 0
+        numDisplayed = 0
 
 #         if args.content:
             
