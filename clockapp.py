@@ -7,9 +7,22 @@ import requests
 import xmltodict
 import argparse
 from collections import OrderedDict
+## The below library is not available via pip.
+## Retrieve and install as instructed from
+## https://github.com/PiSupply/PaPiRus
 from papirus import PapirusText
 from papirus import PapirusTextPos
 from papirus import Papirus
+
+## This script makes use of the NS API, documented extensively here:
+## http://www.ns.nl/en/travel-information/ns-api
+
+## The below imports settings.py, which contains your NS login and API key.
+## settings.py goes in the same directory as this script. File format:
+###########################################################################
+## username = 'username@emailprovider.tld'
+## apikey = 'abyC7M5QqRUXrt1ttyf4rtD-mttw4nkn0zzl35rkGJnMj1zznIppl3'
+###########################################################################
 
 try:
     import settings

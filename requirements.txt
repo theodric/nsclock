@@ -1,5 +1,4 @@
 requests
 xmltodict
 argparse
-collections
-papirus
+## you also need 'papirus' from https://github.com/PiSupply/PaPiRus
