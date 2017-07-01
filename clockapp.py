@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+##merged with papirus-write from https://github.com/PiSupply/PaPiRus to implement arg parsing and epaper output
 
 import os
 import sys
@@ -52,15 +53,16 @@ def main():
          numDisplayed = 0
 
          if args.content:
-            for iterCount in range(30):
-                dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
-                time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
-                plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
-                spc = "    "
-                print(dest + spc + time[11:16] + spc + plat)
-                if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
-                    if dest == "Den Helder":
-                        dest = "HDR"
+            
+         for iterCount in range(30):
+             dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
+             time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
+             plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
+             spc = "    "
+             print(dest + spc + time[11:16] + spc + plat)
+             if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
+                 if dest == "Den Helder":
+                     dest = "HDR"
                         print("!! HIT")
                     elif dest == "Schagen":
                         dest = "SGN"
