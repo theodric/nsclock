@@ -91,7 +91,7 @@ def main():
                     else:
                         disp3_exists = True
                     if disp3_exists == True:
-                        text.AddText(disp3, 0, 40, 18, Id="opt2")
+                        text.AddText(disp3, 0, 60, 18, Id="opt3")
     if numDisplayed == 0:
         print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
 	text = PapirusTextPos(False, rotation=args.rotation)
