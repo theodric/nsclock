@@ -58,7 +58,7 @@ def main():
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
                 print(dest + spc + time[11:16] + spc + plat)
-                if (dest == "Den Helder" and numDisplayed <= 1) or (dest == "Schagen" and numDisplayed <= 1):
+                if (dest == "Enkhuizen" and numDisplayed <= 2) or (dest == "Breda" and numDisplayed <= 2):
                     if dest == "Den Helder":
                         dest = "HDR"
                         print("!! HIT")
@@ -69,6 +69,8 @@ def main():
                         disp = dest + spc + time[11:16] + spc + "Spoor " + plat
                     elif numDisplayed == 1:
                         disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
+                    elif numDisplayed == 2:
+                        disp3 = dest + spc + time[11:16] + spc + "Spoor " + plat
                     numDisplayed += 1
 #                    dest = str(dest)
                     text = PapirusTextPos(False, rotation=args.rotation)
@@ -82,6 +84,14 @@ def main():
                         disp2_exists = True
                     if disp2_exists == True:
                         text.AddText(disp2, 0, 40, 18, Id="opt2")
+                    try:
+                        disp3
+                    except NameError:
+                        disp3_exists = False
+                    else:
+                        disp3_exists = True
+                    if disp3_exists == True:
+                        text.AddText(disp3, 0, 40, 18, Id="opt2")
     if numDisplayed == 0:
         print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
 	text = PapirusTextPos(False, rotation=args.rotation)
