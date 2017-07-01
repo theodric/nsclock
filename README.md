@@ -13,13 +13,14 @@ Prints the same information as above to your terminal.
 
 ##### Usage:
 
-```pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 If you are using nsclock.py, also manually install the 'papirus' library and dependencies as instructed by the documentation at https://github.com/PiSupply/PaPiRus
 
 ```./nsclock.py
 
 or
+
 ./nscliclock.py
 ```
 
