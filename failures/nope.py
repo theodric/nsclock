@@ -32,9 +32,9 @@ train4 = "[__404___]_|__|________)<"
 train5 = " oo   oo  'oo OOOO-| oo\\\\_"
 
 train6 = "           ____"
-train7 = " ___=== |OO|__||_"
-train8 = " |4 0 4|~|________)"
-train9 = "( )--( ) (o)--( )-\\"
+train7 = " ___====   |OO|__||_"
+train8 = "| 4 0 4 |  |        )"
+train9 = "( )---( ) ~ ( )--( )-\\"
 
 
 response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
@@ -119,15 +119,18 @@ def main():
         print("\nNo hits for configured stations. Assuming storing. Exception handler goes here.")
 	text = PapirusTextPos(False, rotation=args.rotation)
         text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
-        text.AddText(train6, 87, 10, 13, Id="train6")
-        text.AddText(train7, 28, 25, 13, Id="train7")
-        text.AddText(train8, 20, 40, 13, Id="train8")
-        text.AddText(train9, 15, 55, 13, Id="train9")
+        text.AddText(train6, 11, 10, 13, Id="train6")
+        text.AddText(train7, 1, 25, 13, Id="train7")
+        text.AddText(train8, 0, 40, 13, Id="train8")
+        text.AddText(train9, 0, 55, 13, Id="train9")
 #        text.AddText("Apparently there", 15, 35, 18, Id="errtxt1")
 #        text.AddText("are no trains.", 25, 55, 18, Id="errtxt2")
-        text.AddText("Apparently there are no trains", 8, 80, 10, Id="errtxt")        
+        text.AddText("Apparently there are no trains", 15, 80, 9, Id="errtxt")
+        
+#assbag git
     text.WriteAll()
 
 if __name__ == '__main__':
     main()
+
 
