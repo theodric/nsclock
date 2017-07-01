@@ -31,10 +31,10 @@ train3 = " ____====  ]OO|_n_n__][."
 train4 = "[__404___]_|__|________)<"
 train5 = " oo   oo  'oo OOOO-| oo\\\\_"
 
-train6 = "          ____"
-train7 = " ______   |  |__||_"
-train8 = "|      |  |        )"
-train9 = "( )--( ) ~ ( )--( )-\\"
+train6 = "           ____"
+train7 = " ___====   |OO|__||_"
+train8 = "| 4 0 4 |  |        )"
+train9 = "( )---( ) ~ ( )--( )-\\"
 
 
 response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
@@ -121,8 +121,8 @@ def main():
         text.AddText("Vertrek van de treinen\n\n", 10, 0, 13, Id="Header")
 #        text.AddText("Apparently there", 15, 35, 18, Id="errtxt1")
 #        text.AddText("are no trains.", 25, 55, 18, Id="errtxt2")
-        text.AddText(train6, 0, 10, 13, Id="train6")
-        text.AddText(train7, 0, 25, 13, Id="train7")
+        text.AddText(train6, 11, 10, 13, Id="train6")
+        text.AddText(train7, 1, 25, 13, Id="train7")
         text.AddText(train8, 0, 40, 13, Id="train8")
         text.AddText(train9, 0, 55, 13, Id="train9")
         
