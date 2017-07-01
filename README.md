@@ -23,9 +23,9 @@ If you are using nsclock.py, also manually install the 'papirus' library and dep
 Then, just run in a terminal (or call with cron).
 ```bash
 ./nsclock.py
-
+```
 or
-
+```bash
 ./nscliclock.py
 ```
 
