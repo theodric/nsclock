@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+#https://github.com/theodric/nsclock
+#theodric 20170701
+
 import os
 import sys
 import time

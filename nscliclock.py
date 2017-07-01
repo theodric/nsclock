@@ -1,5 +1,8 @@
 #!/usr/bin/env python2.7
 
+#https://github.com/theodric/nsclock
+#theodric 20170701
+
 import sys
 import requests
 import xmltodict
