@@ -32,3 +32,13 @@ or
 The scripts are commented and contain a number of configurable variables which you can use you customize them to be useful to your own situation, e.g. start and end stations, etc.
 
 nsclock.py requires Python 2.7, because as of 2017-07-01 there was no available LM75B temperature sensor library for Python 3, and the PaPiRus screen uses such a sensor.
+
+### Credits
+This script makes use of the NS API, documented extensively here:
+http://www.ns.nl/en/travel-information/ns-api
+
+Small pieces of code related to ePaper screen setup stolen whole from demo scripts included with PaPiRus
+
+Google
+StackExchange
+SoloLearn.com
