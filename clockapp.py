@@ -121,6 +121,7 @@ def main():
         text.AddText(train3, 0, 40, 13, Id="train3")
         text.AddText(train4, 0, 55, 13, Id="train4")
         text.AddText(train5, 0, 70, 13, Id="train5")
+        text.AddText(123456789012345678901234567890, 0, 5, 13, Id="test")
         
     text.WriteAll()
 
