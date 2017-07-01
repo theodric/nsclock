@@ -58,7 +58,7 @@ def main():
                 plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
                 spc = "    "
                 print(dest + spc + time[11:16] + spc + plat)
-                if (dest == "Breda" and numDisplayed <= 2) or (dest == "Wormerveer" and numDisplayed <= 2):
+                if (dest == "Wormerveer" and numDisplayed <= 2) or (dest == "Wormerveer" and numDisplayed <= 2):
                     if dest == "Den Helder":
                         dest = "HDR"
                         print("!! HIT")
