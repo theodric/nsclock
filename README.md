@@ -17,9 +17,11 @@ pip install -r requirements.txt
 
 If you are using nsclock.py, also manually install the 'papirus' library and dependencies as instructed by the documentation at https://github.com/PiSupply/PaPiRus
 
-./nsclock.py
+```./nsclock.py
+```
 or
-./nscliclock.py
+```./nscliclock.py
+```
 
 The scripts are commented and contain a number of configurable variables which you can use you customize them to be useful to your own situation, e.g. start and end stations, etc.
 
