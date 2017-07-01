@@ -13,12 +13,14 @@ Prints the same information as above to your terminal.
 
 ##### Usage:
 
+First, install required libraries.
+
 ```bash
 pip install -r requirements.txt
 ```
-
 If you are using nsclock.py, also manually install the 'papirus' library and dependencies as instructed by the documentation at https://github.com/PiSupply/PaPiRus
 
+Then, just run in a terminal (or call with cron).
 ```bash
 ./nsclock.py
 
