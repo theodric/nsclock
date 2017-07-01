@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ 
+
+<Storingen>
+	<Ongepland>
+		
+			<Storing>
+				<id>prio-100565</id>
+			    
+					<Traject>Roosendaal-Vlissingen</Traject>
+			    
+				
+					<Reden>Door een aanrijding met een persoon.</Reden>
+			    
+				
+				
+					<Bericht><![CDATA[Tussen Bergen op Zoom en Kruiningen-Yerseke rijden er geen treinen door een aanrijding met een persoon.Er rijden stopbussen tussen Bergen op Zoom, Rilland-Bath, Krabbendijke en Kruiningen-Yerseke.Er rijden snelbussen tussen Bergen op Zoom en Kruiningen-Yerseke.De extra reistijd kan oplopen tot 60 minuten.Dit duurt tot ongeveer 18:00 uur.]]></Bericht>
+			    
+				
+					<Datum>2017-07-01T15:52:44+0200</Datum>
+			    
+				
+			</Storing>
+		
+	</Ongepland>
+	<Gepland>
+		
+			<Storing>
+				<id>2017_STATW_luik_24jun_3jul</id>
+			    
+					<Traject>Maastricht-Liège G.-Hasselt</Traject>
+			    
+			    
+					<Periode>zaterdag 24 juni tot en met maandag 3 juli 13.30 uur</Periode>
+			    
+			    
+			    
+			    
+					<Bericht><![CDATA[<p>
+<b>Wanneer: zaterdag 24 juni tot en met maandag 3 juli 13.30 uur</b><br/>
+<b>Oorzaak: werkzaamheden</b><br/>
+<b>Advies: U kunt gebruikmaken van de bussen</b>
+<br/>Zaterdag 24 juni tot en met zaterdag 1 juli en maandag 3 juli tot 13.30 uur:
+<br/> er rijden bussen in plaats van treinen tussen Visé en Liège-Guillemins
+<br/> Zondag 2 juli:
+<br/> de trein kan niet stoppen in Eijsden: er rijden bussen tussen Maastricht Randwyck en Eijsden
+<br/> plan uw reis kort voor vertrek
+<br/> <br/>
+  <b>Extra reistijd: een kwartier tot een half uur</b><br/>
+</p>]]></Bericht>
+			    
+			    
+			    
+			</Storing>
+		
+			<Storing>
+				<id>2017_bd_ehv_ht_1_2jul</id>
+			    
+					<Traject>Breda-Eindhoven/'s-Hertogenbosch</Traject>
+			    
+			    
+					<Periode>in de nacht van vrijdag 30 juni op zaterdag 1 juli vanaf 01.30 uur tot en met zondag 2 juli</Periode>
+			    
+			    
+			    
+			    
+					<Bericht><![CDATA[<p>
+<b>Wanneer: in de nacht van vrijdag 30 juni op zaterdag 1 juli vanaf 01.30 uur tot en met zondag 2 juli</b><br/>
+<b>Oorzaak: geplande werkzaamheden</b><br/>
+<b>Advies: U kunt gebruikmaken van de overige treinen en de bussen</b>
+<br/>in de nacht van vrijdag 30 juni op zaterdag 1 juli rijden er minder Nachtnettreinen tussen Breda en Tilburg; u kunt gebruikmaken van een Snelbus
+<br/> er rijden bussen in plaats van treinen tussen Breda en Tilburg
+<br/> reizigers tussen Tilburg en 's-Hertogenbosch kunnen gebruikmaken van de Intercity of omreizen via Boxtel
+<br/> zaterdag na 21.30 uur rijden er ook bussen in plaats van treinen tussen 's-Hertogenbosch en Eindhoven
+<br/> in de nacht van zaterdag 1 op zondag 2 juli rijden er geen Nachtnettreinen tussen Tilburg en Eindhoven; u kunt gebruikmaken van een Snelbus
+<br/> <br/>
+  <b>Extra reistijd: een kwartier tot drie kwartier</b><br/>
+</p>]]></Bericht>
+			    
+			    
+			    
+			</Storing>
+		
+			<Storing>
+				<id>2017_amr_wm_bv_1_2jul</id>
+			    
+					<Traject>Alkmaar-Wormerveer/Beverwijk</Traject>
+			    
+			    
+					<Periode>zaterdag 1 en zondag 2 juli</Periode>
+			    
+			    
+			    
+			    
+					<Bericht><![CDATA[<p>
+<b>Wanneer: zaterdag 1 en zondag 2 juli</b><br/>
+<b>Oorzaak: werkzaamheden</b><br/>
+<b>Advies: U kunt gebruikmaken van de omreisroute of de bussen</b>
+<br/>er rijden bussen in plaats van treinen tussen Alkmaar en Wormerveer
+<br/> er rijden bussen in plaats van treinen tussen Alkmaar en Beverwijk
+<br/> er rijden op zaterdag minder Intercity's tussen Amsterdam Centraal en Zaandam
+<br/> reis tussen Amsterdam Centraal en Heerhugowaard via Hoorn
+<br/> <br/>
+  <b>Extra reistijd: een kwartier tot een half uur</b><br/>
+</p>]]></Bericht>
+			    
+			    
+			    
+			</Storing>
+		
+			<Storing>
+				<id>2017_asd_shl_hvs_lls_1_2jul</id>
+			    
+					<Traject>Amsterdam Centraal/Schiphol Airport-Hilversum/Lelystad Centrum </Traject>
+			    
+			    
+					<Periode>zaterdag 1 en zondag 2 juli </Periode>
+			    
+			    
+			    
+			    
+					<Bericht><![CDATA[<p>
+<b>Wanneer: zaterdag 1 en zondag 2 juli </b><br/>
+<b>Oorzaak: werkzaamheden</b><br/>
+<b>Advies: U kunt gebruikmaken van de overige treinen, omreisroute en/of bus</b>
+<br/>er rijden minder treinen tussen Amsterdam Centraal en Almere/Lelystad Centrum; u kunt omreizen via Schiphol Airport
+<br/> er rijden minder treinen tussen Schiphol Airport en Hilversum; u kunt omreizen via Utrecht Centraal
+<br/> er rijden stopbussen in plaats van Sprinters tussen Amsterdam Muiderpoort en Weesp 
+<br/> er rijden stopbussen in plaats van Sprinters tussen Duivendrecht en Weesp 
+<br/> <br/>
+  <b>Extra reistijd: een kwartier tot een half uur</b><br/>
+</p>]]></Bericht>
+			    
+			    
+			    
+			</Storing>
+		
+	</Gepland>
+</Storingen>

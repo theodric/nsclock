@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ 
+
+<Storingen>
+	<Ongepland>
+		
+	</Ongepland>
+	<Gepland>
+		
+			<Storing>
+				<id>2017_amr_wm_bv_1_2jul</id>
+			    
+					<Traject>Alkmaar-Wormerveer/Beverwijk</Traject>
+			    
+			    
+					<Periode>zaterdag 1 en zondag 2 juli</Periode>
+			    
+			    
+			    
+			    
+					<Bericht><![CDATA[<p>
+<b>Wanneer: zaterdag 1 en zondag 2 juli</b><br/>
+<b>Oorzaak: werkzaamheden</b><br/>
+<b>Advies: U kunt gebruikmaken van de omreisroute of de bussen</b>
+<br/>er rijden bussen in plaats van treinen tussen Alkmaar en Wormerveer
+<br/> er rijden bussen in plaats van treinen tussen Alkmaar en Beverwijk
+<br/> er rijden op zaterdag minder Intercity's tussen Amsterdam Centraal en Zaandam
+<br/> reis tussen Amsterdam Centraal en Heerhugowaard via Hoorn
+<br/> <br/>
+  <b>Extra reistijd: een kwartier tot een half uur</b><br/>
+</p>]]></Bericht>
+			    
+			    
+			    
+			</Storing>
+		
+	</Gepland>
+</Storingen>
