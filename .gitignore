@@ -2,3 +2,4 @@ settings.py
 settings.pyc
 trains.xml
 stations.xml
+__pycache__
