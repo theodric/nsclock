@@ -117,10 +117,10 @@ def main():
 #        text.AddText("Apparently there", 15, 35, 18, Id="errtxt1")
 #        text.AddText("are no trains.", 25, 55, 18, Id="errtxt2")
         text.AddText(train1, 0, 10, 13, Id="train1")
-        text.AddText(train2, 0, 20, 13, Id="train2")
-        text.AddText(train3, 0, 30, 13, Id="train3")
-        text.AddText(train4, 0, 40, 13, Id="train4")
-        text.AddText(train5, 0, 50, 13, Id="train5")
+        text.AddText(train2, 0, 25, 13, Id="train2")
+        text.AddText(train3, 0, 40, 13, Id="train3")
+        text.AddText(train4, 0, 55, 13, Id="train4")
+        text.AddText(train5, 0, 70, 13, Id="train5")
         
     text.WriteAll()
 
