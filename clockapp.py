@@ -38,12 +38,14 @@ if EPD_SIZE == 0.0:
     print("Please select your screen size by running 'papirus-config'.")
     sys.exit()
 
+## CLI 404 train
 train1 = "   . . . . o o o o o"
 train2 = "          _____      o"
 train3 = " ____====  ]OO|_n_n__][."
 train4 = "[__404___]_|__|________)<"
 train5 = " oo   oo  'oo OOOO-| oo\\\\_"
 
+## PaPiRus 404 train
 train6 = "           ____"
 train7 = " ___=== |OO|__||_"
 train8 = " |4 0 4|~|________)"

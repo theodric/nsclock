@@ -9,11 +9,11 @@ from collections import OrderedDict
 ## http://www.ns.nl/en/travel-information/ns-api
 
 ## The below imports settings.py, which contains your NS login and API key.
-## settings.py goes in the same directory as this script. File format:
-###########################################################################
+## settings.py must be created in the same directory as this script. Format:
+############################################################################
 ## username = 'username@emailprovider.tld'
 ## apikey = 'abyC7M5QqRUXrt1ttyf4rtD-mttw4nkn0zzl35rkGJnMj1zznIppl3'
-###########################################################################
+############################################################################
 try:
     import settings
 except ImportError:
@@ -37,6 +37,7 @@ station2 = "Rotterdam Centraal"
 ## the station=<VALUE> at the end of the URL is your start station
 ## Look up the short code for your station in the above-referenced
 ## station list.
+## This block retrieves the current station list to /tmp/trains.xml
 response = requests.get('http://webservices.ns.nl/ns-api-avt?station=asd',
         auth=requests.auth.HTTPBasicAuth(
                 settings.username,
@@ -59,7 +60,7 @@ numDisplayed = 0
 ## range(VALUE) exceeds the number of results contained in the file, the
 ## script will die. I realize that this sucks, and I will work on fixing
 ## it. For now, set the range(VALUE) to something that works for you.
-#for iterCount in range(0, len(doc), not_fucked_up=True, dont_always_return_1=True):
+#for iterCount in range(0, len(doc), not_fucked_up=True, dont_always_return_1=True):    
 for iterCount in range(30):
     dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
