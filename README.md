@@ -13,7 +13,7 @@ Prints the same information as above to your terminal.
 
 ##### Usage:
 
-Step zero, [Register for an NS API key](http://www.ns.nl/ews-aanvraagformulier/) (free), copy the provided settings_example.py to settings.py, and populate it with your credentials. The scripts _will not_ work without this key.
+Step zero, [register for an NS API key](http://www.ns.nl/ews-aanvraagformulier/) (free), copy the provided settings_example.py to settings.py, and populate it with your credentials. The scripts _will not_ work without this key.
 
 Then, install required libraries.
 
