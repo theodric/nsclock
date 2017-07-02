@@ -56,17 +56,15 @@ with open('/tmp/trains.xml', 'wb') as handle:
 with open('/tmp/trains.xml') as fd:
     doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
+
+## Figure out how many trains are departing from your start station
+## the time the script is run.
+departingTrainsCount = doc['ActueleVertrekTijden']['VertrekkendeTrein']
 iterCount = 0
 numDisplayed = 0
-
-## CONFIGURABLE ITEM
-## Depending on the time of day, and the size of your station, there will
-## be a varying number of results returned in the 'trains.xml' file. If
-## range(VALUE) exceeds the number of results contained in the file, the
-## script will die. I realize that this sucks, and I will work on fixing
-## it. For now, set the range(VALUE) to something that works for you.
-#for iterCount in range(0, len(doc), not_fucked_up=True, dont_always_return_1=True):  
-for iterCount in range(30):
+## Then use that to feed the iterator so we don`t have an
+## underrun or miss any.
+for iterCount in range(len(departingTrainsCount)):
     dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
     plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
