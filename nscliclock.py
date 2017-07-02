@@ -59,7 +59,7 @@ with open('/tmp/trains.xml') as fd:
 
 ## Figure out how many trains are departing from your start station
 ## the time the script is run.
-departingTrainsCount = doc['ActueleVertrekTijden']['VertrekkendeTrein']
+departingTrainsCount = len(doc['ActueleVertrekTijden']['VertrekkendeTrein'])
 iterCount = 0
 numDisplayed = 0
 ## Then use that to feed the iterator so we don`t have an

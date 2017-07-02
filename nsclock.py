@@ -107,11 +107,11 @@ def main():
 
 ## Figure out how many trains are departing from your start station                                                                                                                                
 ## the time the script is run.                                                                                                                                                                     
-    departingTrainsCount = doc['ActueleVertrekTijden']['VertrekkendeTrein']                                                                                                                            
+    departingTrainsCount = len(doc['ActueleVertrekTijden']['VertrekkendeTrein'])                                                                                                                            
 ## Then use that to feed the iterator so we don`t have an                                                                                                                                          
 ## underrun or miss any.                                                                                                                                                                           
     if args.content:
-            for iterCount in range(len(departingTrainsCount)):
+            for iterCount in range(departingTrainsCount):
                 ## I'm only grabbing the end station, departure time, and
                 ## departure platform at start station to display.
                 ## There are more things you can retrieve-- paw through trains.xml
