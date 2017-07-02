@@ -102,19 +102,16 @@ def main():
     with open('/tmp/trains.xml') as fd:
          doc = xmltodict.parse(fd.read(), xml_attribs=True)
 
-         iterCount = 0
-         numDisplayed = 0
-         
-## CONFIGURABLE ITEM
-## Depending on the time of day, and the size of your station, there will
-## be a varying number of results returned in the 'trains.xml' file. If
-## range(VALUE) exceeds the number of results contained in the file, the
-## script will die. I realize that this sucks, and I will work on fixing
-## it. For now, set the range(VALUE) to something that works for you.
-## 30 seems to be safe for Amsterdam Centraal most of the time.
-#for iterCount in range(0, len(doc), not_fucked_up=True, dont_always_return_1=True):
-         if args.content:
-            for iterCount in range(30):
+    iterCount = 0
+    numDisplayed = 0
+
+## Figure out how many trains are departing from your start station                                                                                                                                
+## the time the script is run.                                                                                                                                                                     
+    departingTrainsCount = doc['ActueleVertrekTijden']['VertrekkendeTrein']                                                                                                                            
+## Then use that to feed the iterator so we don`t have an                                                                                                                                          
+## underrun or miss any.                                                                                                                                                                           
+    if args.content:
+            for iterCount in range(len(departingTrainsCount)):
                 ## I'm only grabbing the end station, departure time, and
                 ## departure platform at start station to display.
                 ## There are more things you can retrieve-- paw through trains.xml
