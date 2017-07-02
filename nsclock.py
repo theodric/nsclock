@@ -51,7 +51,7 @@ train1 = "   . . . . o o o o o"
 train2 = "          _____      o"
 train3 = " ____====  ]OO|_n_n__][."
 train4 = "[__404___]_|__|________)<"
-train5 = " oo   oo  'oo OOOO-| oo\\\\_"
+train5 = " oo    oo  'oo OOOO-| oo\\\\_"
 
 ## PaPiRus 404 train :)
 train6 = "           ____"
