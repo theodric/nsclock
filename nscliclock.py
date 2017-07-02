@@ -64,7 +64,7 @@ iterCount = 0
 numDisplayed = 0
 ## Then use that to feed the iterator so we don`t have an
 ## underrun or miss any.
-for iterCount in range(len(departingTrainsCount)):
+for iterCount in range(departingTrainsCount):
     dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
     plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
