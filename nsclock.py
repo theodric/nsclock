@@ -191,7 +191,7 @@ def main():
                     else:
                         disp4_exists = True
                     if disp4_exists == True:
-                        text.AddText(disp3, 0, 79, 18, Id="opt4")
+                        text.AddText(disp4, 0, 79, 18, Id="opt4")
                         
     ## Exception handling. If we got all the way here and there was
     ## nothing to display, print something on the screen and the CLI
