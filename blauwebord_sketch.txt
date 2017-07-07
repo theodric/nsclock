@@ -1,0 +1,6 @@
+7 columns
+TIME-HR TIME-MIN NAAR SPOOR TREINSOORT VIA OPMERKINGEN
+    [14]:[04] [Amsterdam C.] [8a] [Sprinter] [A'dam Sloterdijk] [Ruikt naar pis]
+	
+etc.
+
