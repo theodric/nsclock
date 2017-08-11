@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 #https://github.com/theodric/nsclock
-#theodric 20170701
+#theodric 20170811
+#rev2 - fix handling of no departure platform
 
 import os
 import sys

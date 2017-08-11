@@ -2,6 +2,7 @@
 
 #https://github.com/theodric/nsclock
 #theodric 20170811
+#rev2 - fix handling of no departure platform
 
 import sys
 import requests
