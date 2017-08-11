@@ -122,10 +122,10 @@ def main():
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
                 #this test handles situations where there is no departure platform because of a substition of a train with a bus
                 if 'Snelbus' not in doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['TreinSoort']:
-                    platext = "Platform "
+                    platext = "Spoor "
                     plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor'][u'#text']
                 else:
-                    platext = "Replacement "
+                    platext = "Verv. "
                     plat = "bus"
                     #    change = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['@wijziging']
                 spc = "    "
@@ -151,13 +151,13 @@ def main():
                                        ## chars [11:16] is where the time lives.
                                        ## the raw var contains e.g.
                                        ## 2017-07-01T21:07:00+0200
-                        disp = dest + spc + time[11:16] + spc + "Spoor " + plat
+                        disp = dest + spc + time[11:16] + spc + platext + plat
                     elif numDisplayed == 1:
-                        disp2 = dest + spc + time[11:16] + spc + "Spoor " + plat
+                        disp2 = dest + spc + time[11:16] + spc + platext + plat
                     elif numDisplayed == 2:
-                        disp3 = dest + spc + time[11:16] + spc + "Spoor " + plat
+                        disp3 = dest + spc + time[11:16] + spc + platext + plat
                     elif numDisplayed == 3:
-                        disp4 = dest + spc + time[11:16] + spc + "Spoor " + plat
+                        disp4 = dest + spc + time[11:16] + spc + platext + plat
                     numDisplayed += 1
 #                    dest = str(dest)
                     #initialize screen buffer var "text" without displaying anything
