@@ -83,4 +83,4 @@ for iterCount in range(departingTrainsCount):
 ## numDisplayed to get more results.
     if (dest == destStation1 and numDisplayed <= 3) or (dest == destStation2 and numDisplayed <= 3):
         numDisplayed += 1
-        print(dest + spc + time[11:16] + spc + "Platform " + plat)
+        print(dest + spc + time[11:16] + spc + platext + plat)
