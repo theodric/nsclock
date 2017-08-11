@@ -68,11 +68,13 @@ numDisplayed = 0
 for iterCount in range(departingTrainsCount):
     dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
-    kind = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['TreinSoort']
-    if 'Snelbus' not in kind:
+    #this test handles situations where there is no departure platform because of a substition of a train with a bus
+    if 'Snelbus' not in doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['TreinSoort']:
+        platext = "Platform "
         plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor'][u'#text']
     else:
-        plat = "BUS"
+        platext = "Replacement "
+        plat = "bus"
 #    plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['@wijziging']
 #    change = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['@wijziging']
     spc = "    "
@@ -83,5 +85,5 @@ for iterCount in range(departingTrainsCount):
 ## numDisplayed to get more results.
     if (dest == destStation1 and numDisplayed <= 3) or (dest == destStation2 and numDisplayed <= 3):
         numDisplayed += 1
-        print(dest + spc + time[11:16] + spc + "Platform " + plat)
+        print(dest + spc + time[11:16] + spc + platext + plat)
 
