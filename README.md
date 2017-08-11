@@ -31,7 +31,7 @@ or
 ./nscliclock.py
 ```
 
-The scripts are commented and contain a number of configurable variables which you can use you customize them to be useful to your own situation, e.g. start and end stations, etc.
+The scripts are commented and contain a number of configurable variables which you can use to customize them to be useful to your own situation, e.g. start and end stations, etc.
 
 nsclock.py requires Python 2.7, because as of 2017-07-01 there was no available LM75B temperature sensor library for Python 3, and the PaPiRus screen uses such a sensor.
 
