@@ -120,7 +120,14 @@ def main():
                 ## http://omz-software.com/pythonista/docs/ios/xmltodict.html
                 dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
                 time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
-                plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
+                #this test handles situations where there is no departure platform because of a substition of a train with a bus
+                if 'Snelbus' not in doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['TreinSoort']:
+                    platext = "Platform "
+                    plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor'][u'#text']
+                else:
+                    platext = "Replacement "
+                    plat = "bus"
+                    #    change = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['@wijziging']
                 spc = "    "
                 
                 print(dest + spc + time[11:16] + spc + plat) ## print each row on CLI

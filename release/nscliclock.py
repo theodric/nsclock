@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 
 #https://github.com/theodric/nsclock
-#theodric 20170701
+#theodric 20170811
 
 import sys
 import requests
@@ -67,7 +67,13 @@ numDisplayed = 0
 for iterCount in range(departingTrainsCount):
     dest = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['EindBestemming']
     time = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekTijd']
-    plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['#text']
+    #this test handles situations where there is no departure platform because of a substition of a train with a bus
+    if 'Snelbus' not in doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['TreinSoort']:
+        platext = "Platform "
+        plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor'][u'#text']
+    else:
+        platext = "Replacement "
+        plat = "bus"
     spc = "    "
 
 ## CONFIGURABLE ITEM

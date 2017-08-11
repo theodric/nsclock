@@ -75,7 +75,6 @@ for iterCount in range(departingTrainsCount):
     else:
         platext = "Replacement "
         plat = "bus"
-#    plat = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['@wijziging']
 #    change = doc['ActueleVertrekTijden']['VertrekkendeTrein'][iterCount]['VertrekSpoor']['@wijziging']
     spc = "    "
 
