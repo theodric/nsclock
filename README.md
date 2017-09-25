@@ -41,7 +41,7 @@ http://www.ns.nl/en/travel-information/ns-api
 
 Small pieces of code related to ePaper screen setup stolen whole from demo scripts included with PaPiRus
 
-This was my first attempt at writing something useful in Python. I owe thanks to:
+I owe thanks to:
 
 [Google](https://www.google.com/)
 
