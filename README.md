@@ -47,4 +47,6 @@ I owe thanks to:
 
 [stackoverflow](https://stackoverflow.com/)
 
-[SoloLearn Python 3 course](https://www.sololearn.com/Course/Python/)
+[SoloLearn](https://www.sololearn.com/Course/Python/)
+
++friends willing to answer my daft questions.
