@@ -1,6 +1,8 @@
 # nsclock
 ### NS (Nederlandse Spoorwegen - Dutch rail service) departure timetables for terminals and PaPiRus ePaper displays, in Python
 
+#### NOTE: this died 1 API update ago, and I no longer live in the Netherlands, so I am archiving the repo for posterity.
+
 #### nsclock.py
 Prints the next up to four trains, from a configurable start point, to a configurable destination or two, on a [PaPiRus ePaper screen](https://www.pi-supply.com/?s=papirus&post_type=product&tags=1&limit=5&ixwps=1) attached to a Raspberry Pi (Zero).
 
